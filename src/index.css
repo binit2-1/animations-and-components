@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
+/*color variables*/
+:root{
+  /*zajno loader*/
+  --zajno-bg: #EBEBEB;
+  --zajno-black: #1A1A1A;
+}
+
+/* zajno */
 @font-face {
   font-family: "zajno";
   src: url(./assets/sh.woff2);
 }
+
