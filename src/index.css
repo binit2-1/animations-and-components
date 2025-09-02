@@ -13,3 +13,10 @@
   src: url(./assets/sh.woff2);
 }
 
+.zajno-background{
+  background-color: var(--zajno-bg);
+}
+
+.zajno-black{
+  color: var(--zajno-black);
+}
