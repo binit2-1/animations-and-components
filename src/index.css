@@ -1,22 +1,32 @@
 @import "tailwindcss";
 
-/*color variables*/
-:root{
-  /*zajno loader*/
-  --zajno-bg: #EBEBEB;
-  --zajno-black: #1A1A1A;
-}
-
 /* zajno */
 @font-face {
   font-family: "zajno";
   src: url(./assets/sh.woff2);
 }
-
+@font-face {
+  font-family: "benzin";
+  src: url(./assets/Benzin-Medium.woff2);
+}
 .zajno-background{
-  background-color: var(--zajno-bg);
+  background-color:  #EBEBEB;
 }
 
 .zajno-black{
-  color: var(--zajno-black);
+  color: #1A1A1A;
+}
+
+/*BarLoader*/
+.bar-loader-bg{
+  background-color: #02022f;
+}
+
+.bar-loader-text{
+  color:#FFFFFF;
+  font-family: "benzin";
+}
+
+.bar-loader{
+  background-color: #2423AD;
 }

@@ -29,7 +29,7 @@ const ZajnoLoader = () => {
       duration: duration,
       ease: "dynamicEase",
     });
-  });
+  }, []);
 
   return (
     <div className='zajno-background w-full h-full flex justify-center items-center'>
