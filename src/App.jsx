@@ -1,12 +1,14 @@
 import React from 'react'
 import ZajnoLoader from './loaders/ZajnoLoader'
 import BarLoader from './loaders/BarLoader'
+import HoverBar from './navbar/HoverBar'
 
 const App = () => {
   return (
-    <div className='w-screen h-screen'>
+    <div className='w-screen h-screen bg-black'>
         {/* <ZajnoLoader /> */}
-        <BarLoader />
+        {/* <BarLoader /> */}
+        <HoverBar />
     </div>
   )
 }

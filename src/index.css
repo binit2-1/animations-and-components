@@ -30,3 +30,9 @@
 .bar-loader{
   background-color: #2423AD;
 }
+
+/* hoverBar */
+@font-face {
+  font-family: "hover-bar";
+  src: url(./assets/hoverBar.woff2);
+}
