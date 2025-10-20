@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const HoverBar = () => {;
+const HoverBar = () => {
   return (
-    <div className='flex justify-center w-full h-full '>
-      <div className='flex justify-center items-center text-white font-[hover-bar] text-4xl bg-red-600 w-120 h-15 hover:w-135 hover:h-150 transition-all ease-in-out duration-1000 mt-5 rounded-2xl'>
-        Hover Me
+    <div className="sticky w-ful h-full">
+      <div className="flex justify-center w-full h-full ">
+        <div className="flex justify-flex items-flex px-4 py-3.5 text-white font-[hover-bar] text-3xl bg-liquid-glass w-120 h-15 hover:w-135 hover:h-220 transition-all ease-in-out duration-1000 mt-5 rounded-2xl">
+          Hover Me
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HoverBar
+export default HoverBar;
