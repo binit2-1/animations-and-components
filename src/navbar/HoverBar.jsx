@@ -37,7 +37,7 @@ const HoverBar = () => {
       {
         yPercent: 0,
         stagger: { each: 0.04, from: "end" },
-        duration: 0.2,
+        duration: 0.7,
         ease: "expo.inOut",
         onStart: () => gsap.set(opts, { pointerEvents: "auto" }),
       },
@@ -81,13 +81,13 @@ const HoverBar = () => {
             className="absolute text-5xl inset-0 flex flex-col px-3 py-2 justify-center gap-0 leading-none"
           >
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight">HOME</span>
+              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">HOME<span className="text-sm text-gray-400 m-2">01</span></span>
             </li>
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight">PROJECTS</span>
+              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">PROJECTS<span className="text-sm text-gray-400 m-2">02</span></span>
             </li>
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight">ABOUT</span>
+              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">ABOUT<span className="text-sm text-gray-400 m-2">03</span></span>
             </li>
           </ul>
         </div>
