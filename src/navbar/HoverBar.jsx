@@ -10,9 +10,9 @@ const HoverBar = () => {
   const tlRef = useRef(null);
 
   useEffect(() => {
-    const el = containerRef.current;
-    const opts = optionsRef.current;
-    if (!el || !opts) return;
+  const el = containerRef.current;
+  const opts = optionsRef.current;
+  if (!el || !opts) return;
 
     const expandDur = 1.0;
 
@@ -44,12 +44,39 @@ const HoverBar = () => {
       `-=${expandDur / 2}`
     );
 
+    const liElements = Array.from(opts.querySelectorAll("li"));
+    const underlineEls = liElements.map((li) => li.querySelector(".nav-underline"));
+    underlineEls.forEach((u) => {
+      if (u) gsap.set(u, { scaleX: 0, transformOrigin: "left center" });
+    });
+
+    const handlers = liElements.map((li, i) => {
+      const u = underlineEls[i];
+      const enter = () => {
+        if (!u) return;
+        gsap.killTweensOf(u);
+        gsap.to(u, { scaleX: 1, transformOrigin: "left center", duration: 0.34, ease: "expo.inOut" });
+      };
+      const leave = () => {
+        if (!u) return;
+        gsap.killTweensOf(u);
+        gsap.to(u, { scaleX: 0, transformOrigin: "right center", duration: 0.34, ease: "expo.inOut" });
+      };
+      li.addEventListener("mouseenter", enter);
+      li.addEventListener("mouseleave", leave);
+      return { li, enter, leave };
+    });
+
     return () => {
       if (tlRef.current) {
         tlRef.current.kill();
         tlRef.current = null;
       }
-      gsap.killTweensOf([el, opts]);
+      handlers.forEach(({ li, enter, leave }) => {
+        li.removeEventListener("mouseenter", enter);
+        li.removeEventListener("mouseleave", leave);
+      });
+      gsap.killTweensOf([el, opts, ...underlineEls]);
     };
   }, []);
 
@@ -78,21 +105,36 @@ const HoverBar = () => {
 
           <ul
             ref={optionsRef}
-            className="absolute text-5xl inset-0 flex flex-col px-3 py-2 justify-center gap-0 leading-none"
+            className="absolute text-5xl inset-0 flex flex-col px-3 py-2 justify-center gap-0 leading-none z-20"
           >
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">
-                HOME<span className="text-sm text-gray-400 m-2">01</span>
+              <span className="nav-item-inner inline-block relative pt-2 leading-tight cursor-pointer">
+                HOME
+                <span className="text-sm text-gray-400 ml-2">01</span>
+                <span
+                  className="nav-underline block absolute left-0 bottom-0 h-[2px] bg-white w-full"
+                  style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
+                />
               </span>
             </li>
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">
-                PROJECTS<span className="text-sm text-gray-400 m-2">02</span>
+              <span className="nav-item-inner inline-block relative pt-2 leading-tight cursor-pointer">
+                PROJECTS
+                <span className="text-sm text-gray-400 ml-2">02</span>
+                <span
+                  className="nav-underline block absolute left-0 bottom-0 h-[2px] bg-white w-full"
+                  style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
+                />
               </span>
             </li>
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">
-                ABOUT<span className="text-sm text-gray-400 m-2">03</span>
+              <span className="nav-item-inner inline-block relative pt-2 leading-tight cursor-pointer">
+                ABOUT
+                <span className="text-sm text-gray-400 ml-2">03</span>
+                <span
+                  className="nav-underline block absolute left-0 bottom-0 h-[2px] bg-white w-full"
+                  style={{ transform: "scaleX(0)", transformOrigin: "left center" }}
+                />
               </span>
             </li>
           </ul>
