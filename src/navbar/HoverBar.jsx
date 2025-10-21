@@ -81,13 +81,19 @@ const HoverBar = () => {
             className="absolute text-5xl inset-0 flex flex-col px-3 py-2 justify-center gap-0 leading-none"
           >
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">HOME<span className="text-sm text-gray-400 m-2">01</span></span>
+              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">
+                HOME<span className="text-sm text-gray-400 m-2">01</span>
+              </span>
             </li>
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">PROJECTS<span className="text-sm text-gray-400 m-2">02</span></span>
+              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">
+                PROJECTS<span className="text-sm text-gray-400 m-2">02</span>
+              </span>
             </li>
             <li className="overflow-hidden py-0">
-              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">ABOUT<span className="text-sm text-gray-400 m-2">03</span></span>
+              <span className="nav-item-inner block pt-2 leading-tight cursor-pointer">
+                ABOUT<span className="text-sm text-gray-400 m-2">03</span>
+              </span>
             </li>
           </ul>
         </div>
