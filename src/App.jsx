@@ -9,7 +9,7 @@ import ComposterLoading from './loading-animations/ComposterLoading'
 const App = () => {
   return (
     <div className='w-screen h-screen bg-black '> 
-      <img src={bg} alt='sassy' className='absolute w-full h-full object-cover'/> 
+      {/* <img src={bg} alt='sassy' className='absolute w-full h-full object-cover'/>  */}
         {/* <ZajnoLoader /> */}
         {/* <BarLoader /> */}
         {/* <HoverBar /> */}
