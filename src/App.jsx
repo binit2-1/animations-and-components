@@ -3,6 +3,7 @@ import bg from './assets/sassy.png'
 import ZajnoLoader from './loaders/ZajnoLoader'
 import BarLoader from './loaders/BarLoader'
 import HoverBar from './navbar/HoverBar'
+import ComposterLoading from './loading-animations/ComposterLoading'
 
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
       <img src={bg} alt='sassy' className='absolute w-full h-full object-cover'/> 
         {/* <ZajnoLoader /> */}
         {/* <BarLoader /> */}
-        <HoverBar />
+        {/* <HoverBar /> */}
+        <ComposterLoading />
     </div>
   )
 }
