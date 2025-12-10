@@ -4,6 +4,7 @@ import ZajnoLoader from './loaders/ZajnoLoader'
 import BarLoader from './loaders/BarLoader'
 import HoverBar from './navbar/HoverBar'
 import ComposterLoading from './loading-animations/ComposterLoading'
+import ComposterHover from './loading-animations/ComposterHover'
 
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
         {/* <ZajnoLoader /> */}
         {/* <BarLoader /> */}
         {/* <HoverBar /> */}
-        <ComposterLoading />
+        {/* <ComposterLoading /> */}
+        <ComposterHover />
     </div>
   )
 }
